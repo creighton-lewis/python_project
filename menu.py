@@ -26,7 +26,8 @@ def main():
     options = [
     "[a] subdomain_enumeration", 
     "[b] technology_enumeration", 
-    "[o] vulnerability_enumeration"]
+    "[c] vulnerability_enumeration"]
+    "[d] exploit search"
     terminal_menu = TerminalMenu(options, title="Options")
     menu_entry_index = terminal_menu.show()
 

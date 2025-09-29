@@ -2,7 +2,7 @@
 import os 
 import socket 
 import requests 
-from rich.console import console
+#from rich.console import console
 #Install necessary programs 
 
 
@@ -31,12 +31,14 @@ def subdomain_enum():
         os.system(f"gobuster dns -d {target} -w ~/lst/sub_list -o {target}_gobuster -t 70 --wildcard")
         os.system(f"sed -i 's/www.//g' {target}_gobuster")
         os.system(f"sed -i 's/Found://g' {target}_gobuster")
-        os.system(f"tail -n +11 "target" >> "{target}_clean")
-        os.system(f"cat "{target}_clean"))
-            mv -f "{file}_clean" "$file"
-exit
+        os.system(f"tail -n +11 {target}_gobuster >> {target}_clean")
+        os.system(f"cat {target}_clean")
+        os.system(f"mv -f {target}_clean {target}_file")
         os.system(f"sort -u {target}_subdomains.txt -o {target}_subdomains")
+        os.system(f"{target}_gobuster >> {target}_subdomains")
+    os.system(f"sort -u {target}_subdomains -o {target}_subdomains")
     print(f"Subdomain enumeration completed. Results saved in {target}_subdomains")
+    
 
     os.system(f"grep ptr")
     os.system(f"")
@@ -44,8 +46,6 @@ exit
 
 def option_2():
     print("Tech Enumeration")
-     try: 
-        file = input("Enter file path")
-
+    file = input("Enter file path")
     os.system(f"sudo nmap sV --top-ports 30 -iL {target} -oN {target}_topportscan.txt -D RND:10 --data-length 20 --script auth")
     print(f"Port scanning completed. Results saved in {target}_fullportscan.txt & {target}_topportscan.txt")
