@@ -1,5 +1,4 @@
 import os
-import 
 import sys
 import time
 import subprocess
@@ -28,9 +27,12 @@ def main():
     "[b] technology_enumeration", 
     "[c] vulnerability_enumeration"]
     "[d] exploit search"
+    "[e] directory enumeration"
+    "[f] ai analysis "
+    ""
     terminal_menu = TerminalMenu(options, title="Options")
     menu_entry_index = terminal_menu.show()
 
-
-if __name__ == "__main__":
-    main()
+if options[menu_entry_index] == "[a] subdomain_enumeration":
+    import sub_domain_enum from subdomain_enum
+    sub_domain_enum.target()

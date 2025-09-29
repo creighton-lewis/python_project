@@ -17,4 +17,8 @@ try:
     print(data)
 except: 
     print ("Invalid site")
+
+try: 
+    company= re.split
+    url = https://reddit.com/search/\?q\=
     

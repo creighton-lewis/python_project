@@ -34,7 +34,7 @@ def subdomain_enum():
         os.system(f"tail -n +11 {target}_gobuster >> {target}_clean")
         os.system(f"cat {target}_clean")
         os.system(f"mv -f {target}_clean {target}_file")
-        os.system(f"sort -u {target}_subdomains.txt -o {target}_subdomains")
+        os.system(f"sort -u {target}_subdomains -o {target}_subdomains")
         os.system(f"{target}_gobuster >> {target}_subdomains")
     os.system(f"sort -u {target}_subdomains -o {target}_subdomains")
     print(f"Subdomain enumeration completed. Results saved in {target}_subdomains")

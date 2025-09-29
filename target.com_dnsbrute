@@ -1,0 +1,7 @@
+# Nmap 7.98 scan initiated Mon Sep 29 16:13:22 2025 as: nmap --script smtp-enum-users --top-ports 20 -sn -oN target.com_dnsbrute target.com T4
+Failed to resolve "T4".
+Nmap scan report for target.com (151.101.66.187)
+Host is up (0.024s latency).
+Other addresses for target.com (not scanned): 151.101.194.187 151.101.130.187 151.101.2.187
+
+# Nmap done at Mon Sep 29 16:13:23 2025 -- 1 IP address (1 host up) scanned in 1.11 seconds
