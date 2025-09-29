@@ -1,0 +1,3 @@
+python-nmap=current version 
+requests=current version 
+simple-term-menu=1.6.6p
