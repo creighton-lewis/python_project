@@ -1,0 +1,9 @@
+urlib3 
+rich 
+colorama 
+requests 
+bs4 
+dnspython
+whois 
+pyOpenSSL 
+python-nmap 
