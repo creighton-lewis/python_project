@@ -1,4 +1,3 @@
-shit.code
 global 
 target=input("Enter the target domain (e.g., example.com): ")
 print (target)
