@@ -11,7 +11,7 @@ def target():
     target = input("Enter company name: ")
     print (target)
     end = target.rsplit(".", 1)[-1]
-    print ("Welcome to the Reconnaissance Tool. For subdomain enumeration, press one")
+  #  print ("Welcome to the Reconnaissance Tool. For subdomain enumeration, press one")
 #try:
     #    site_ip = socket.gethostbyname(target)
  #   print(site_ip, end ='')
