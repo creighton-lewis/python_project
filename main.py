@@ -39,13 +39,26 @@ def subdomain_enum():
     os.system(f"sort -u {target}_subdomains -o {target}_subdomains")
     print(f"Subdomain enumeration completed. Results saved in {target}_subdomains")
     
+    def host_check():
+        with open(f"{target}_subdomains") as f:
+            subdomains = f.read().splitlines()
+        live_subs = []
+        for sub in subdomains:
+            url = f".{sub}.com"
+            try:
+                r = requests.get(url, timeout=15)
+                if r.status_code == 200:
+                    print(f"[+] {url} is live")
+                    live_subs.append(url)
+            except requests.RequestException:
+                pass
+        with open(f"{target}_live_subdomains.txt", "w") as f:
+            for live in live_subs:
+                f.write(f"{live}\n")
+        print(f"Live subdomains saved in {target}_live_subdomains.txt")
 
-    os.system(f"grep ptr")
-    os.system(f"")
-
-
-def option_2():
-    print("Tech Enumeration")
-    file = input("Enter file path")
-    os.system(f"sudo nmap sV --top-ports 30 -iL {target} -oN {target}_topportscan.txt -D RND:10 --data-length 20 --script auth")
-    print(f"Port scanning completed. Results saved in {target}_fullportscan.txt & {target}_topportscan.txt")
+#def option_2():
+ #   print("Tech Enumeration")
+  #  file = input("Enter file path")
+   # os.system(f"sudo nmap sV --top-ports 30 -iL {target} -oN {target}_topportscan.txt -D RND:10 --data-length 20 --script auth")
+   # print(f"Port scanning completed. Results saved in {target}_fullportscan.txt & {target}_topportscan.txt")

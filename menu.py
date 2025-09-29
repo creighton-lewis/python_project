@@ -1,5 +1,5 @@
 import os
-import nmap
+import 
 import sys
 import time
 import subprocess
