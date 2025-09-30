@@ -8,3 +8,4 @@ whois
 pyOpenSSL 
 python-nmap
 xmltodict
+TerminalMenu

@@ -3,11 +3,10 @@ import os
 import socket 
 import requests 
 import random
-from TerminalMenu import simple_term_menu
-#from rich.console import console
+from simple_term_menu import TerminalMenu#from rich.console import console
 #Install necessary programs 
 
-print("Welcome to ReconTool")
+print("Welcome to Javelim")
 print("""\
            .                          _                          ..                                    
   .x88888x.                     u                     x .d88"                                     
@@ -30,7 +29,6 @@ global target
 target = input("Enter company name: ")
 print (target)
 end = target.rsplit(".", 1)[-1]   
-
 def main():
     options = [
     "[a] subdomain_enumeration", 
@@ -39,59 +37,28 @@ def main():
     "[d] exploit search",
     "[e] directory enumeration",
     "[f] ai analysis,"]
-    terminal_menu = TerminalMenu(options, title="Options")
+    terminal_menu = TerminalMenu(options, title="options")
     menu_entry_index = terminal_menu.show()
-    scripts = [
-        "subdomains.py",
-        "technology_enumeration.py", 
-        "vulnerability_enumeration.py",
-        "exploit_search.py",
-        "directory_enumeration.py",
-        "ai_analysis.py"
-    ]
-
-
-def subdomain_enum():
-    print("Subdomain Enumeration Selected")
-    os.system(f"nmap --script dns-brute-enum -sn -n {target} -oN {target}_dnsbrute")
-    os.system(f"subfinder -d {target} -o {target}_subdomains")
-    os.system(f"amass enum -d {target} -o {target}_amass")
-    os.system(f"assetfinder --subs-only {target} >> {target}_subdomains")
-def gobuster_sub():
-    os.system(f"gobuster dns -d {target} -w ~/lst/sub_list -o {target}_gobuster -t 70 --wildcard")
-    os.system(f"sed -i 's/www.//g' {target}_gobuster")
-    os.system(f"sed -i 's/Found://g' {target}_gobuster")
-    os.system(f"tail -n +11 {target}_gobuster >> {target}_clean")
-    os.system(f"cat {target}_clean")
-    os.system(f"mv -f {target}_clean {target}_file")
-    os.system(f"sort -u {target}_subdomains -o {target}_subdomains")
-    os.system(f"{target}_gobuster >> {target}_subdomains")
-    os.system(f"sort -u {target}_subdomains -o {target}_subdomains")
-    print(f"Subdomain enumeration completed. Results saved in {target}_subdomains")
-subdomain_enum();
-gobuster_sub();
-
-def host_check():
-            
-            with open(f"{target}_subdomains") as f:
-                subdomains = f.read().splitlines()
-            live_subs = []
-            for sub in subdomains:
-                url = f".{sub}.com"
-                try:
-                    r = requests.get(url, timeout=15)
-                    if r.status_code == 200:
-                        print(f"[+] {url} is live")
-                        live_subs.append(url)
-                except requests.RequestException:
-                    pass
-            with open(f"{target}_live_subdomains.txt", "w") as f:
-                for live in live_subs:
-                    f.write(f"{live}\n")
-            print(f"Live subdomains saved in {target}_live_subdomains.txt")
-host_check();
-#def option_2():
- #   print("Tech Enumeration")
-  #  file = input("Enter file path")
-   # os.system(f"sudo nmap sV --top-ports 30 -iL {target} -oN {target}_topportscan.txt -D RND:10 --data-length 20 --script auth")
-   # print(f"Port scanning completed. Results saved in {target}_fullportscan.txt & {target}_topportscan.txt")
+    print(f"You have selected {options[menu_entry_index]}!")
+   # main()
+    if menu_entry_index == 0:
+        print ("option 1 selected")
+        x=print(target)
+        os.system("python3 subdomains.py {x}")
+    elif menu_entry_index == 1:
+        print ("option 2 selected")
+        os.system("python3 tech.py {target}")
+    elif menu_entry_index == 2:
+        print ("option 3 selected")
+        os.system("python3 vuln.py {target}")
+    elif menu_entry_index == 3:
+        print ("option 4 selected")
+        os.system("python3 exploits.py {target}")
+    elif menu_entry_index == 4:
+        print ("option 5 selected")
+        os.system("python3 dirb.py {target}")
+    elif menu_entry_index == 5:
+        print ("option 6 selected")
+        os.system("python3 ai.py {target}")
+if __name__ == "__main__":
+    main()

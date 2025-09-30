@@ -37,4 +37,16 @@ def main():
     "[f] ai analysis,"]
     terminal_menu = TerminalMenu(options, title="Options")
     menu_entry_index = terminal_menu.show()
+    options = options[menu_entry_index]
+    if options == "[a] subdomain_enumeration":
+        print ("option 1 selected")
+        os.system("python3 subdomains.py")
+      
 main();
+
+ #       try: #script that runs subdomain enumeration using subdomains.py file. 
+    #      os.system("python3 subdomains.py")
+ #   except:
+ #   print(f"An error occurred:")
+ #   sys.exit(1)
+     
