@@ -1,4 +1,0 @@
-# Nmap 7.98 scan initiated Mon Sep 29 15:52:25 2025 as: nmap --script dns-brute -sn -n -oN 3pboxing.com_dnsbrute 3pboxing.com
-Failed to resolve "3pboxing.com".
-WARNING: No targets were specified, so 0 hosts scanned.
-# Nmap done at Mon Sep 29 15:52:26 2025 -- 0 IP addresses (0 hosts up) scanned in 0.62 seconds

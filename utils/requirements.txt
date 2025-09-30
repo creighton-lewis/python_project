@@ -6,4 +6,5 @@ bs4
 dnspython
 whois 
 pyOpenSSL 
-python-nmap 
+python-nmap
+xmltodict

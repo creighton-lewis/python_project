@@ -1,2 +1,0 @@
-# Nmap 7.98 scan initiated Mon Sep 29 16:13:54 2025 as: nmap --script smtp-enum-users --top-ports 20 -sn -oN walmart.com_dnsbrute walmart.com
-# Nmap done at Mon Sep 29 16:13:56 2025 -- 1 IP address (0 hosts up) scanned in 2.01 seconds
