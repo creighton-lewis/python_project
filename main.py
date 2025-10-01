@@ -3,10 +3,11 @@ import os
 import socket 
 import requests 
 import random
+import argparse
 from simple_term_menu import TerminalMenu#from rich.console import console
 #Install necessary programs 
-
-print("Welcome to Javelim")
+def logo():
+    print("Welcome to Javelim")
 print("""\
            .                          _                          ..                                    
   .x88888x.                     u                     x .d88"                                     
@@ -25,6 +26,7 @@ print("""\
     `"888x:─"                                                                                     / \_______/|__/      |__/ \_______/   \___/  
                                                                 
          """)                                                       
+logo()
 global target
 target = input("Enter company name: ")
 print (target)
@@ -36,7 +38,9 @@ def main():
     "[c] vulnerability_enumeration",
     "[d] exploit search",
     "[e] directory enumeration",
-    "[f] ai analysis,"]
+    "[f] ai analysis,"
+    "[g] networking,"
+    "[g] all "]
     terminal_menu = TerminalMenu(options, title="options")
     menu_entry_index = terminal_menu.show()
     print(f"You have selected {options[menu_entry_index]}!")
@@ -47,7 +51,7 @@ def main():
         os.system("python3 subdomains.py {x}")
     elif menu_entry_index == 1:
         print ("option 2 selected")
-        os.system("python3 tech.py {target}")
+        os.system("python3 tech.py {sub_end}")
     elif menu_entry_index == 2:
         print ("option 3 selected")
         os.system("python3 vuln.py {target}")
@@ -60,5 +64,8 @@ def main():
     elif menu_entry_index == 5:
         print ("option 6 selected")
         os.system("python3 ai.py {target}")
+    elif menu_entry_index == 6:
+        print ("option 7 selected")
+        os.system("python3 subdomains.py \n python3 tech.py {sub_end} \n python3 exploits.py")
 if __name__ == "__main__":
     main()

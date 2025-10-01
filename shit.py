@@ -11,7 +11,6 @@ def intro_menu():
     return choice
 
 
-https://api.hunter.io/v2/companies/find?domain=hunter.io&api_key=a1d14852a2a6d291bede5c402cf0cd8779aa3f5a
 
 ef host_check():
             

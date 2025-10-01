@@ -1,0 +1,21 @@
+# Nmap 7.98 scan initiated Tue Sep 30 18:56:06 2025 as: nmap -sV --script dns-brute -sn -n -oN target.com_dnsbrute target.com
+Nmap scan report for target.com (151.101.66.187)
+Host is up (0.025s latency).
+Other addresses for target.com (not scanned): 151.101.194.187 151.101.2.187 151.101.130.187
+
+Host script results:
+| dns-brute: 
+|   DNS Brute-force hostnames: 
+|     news.target.com - 23.59.169.200
+|     news.target.com - 23.59.169.204
+|     download.target.com - 161.225.80.30
+|     www.target.com - 151.101.130.187
+|     www.target.com - 151.101.194.187
+|     www.target.com - 151.101.2.187
+|     www.target.com - 151.101.66.187
+|     git.target.com - 161.225.68.89
+|     help.target.com - 13.109.180.6
+|     help.target.com - 13.109.180.8
+|_    help.target.com - 13.109.180.9
+
+# Nmap done at Tue Sep 30 18:56:10 2025 -- 1 IP address (1 host up) scanned in 3.69 seconds

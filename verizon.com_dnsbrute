@@ -1,0 +1,43 @@
+# Nmap 7.98 scan initiated Tue Sep 30 16:45:58 2025 as: nmap -sV --script dns-brute -sn -n -oN verizon.com_dnsbrute verizon.com
+Nmap scan report for verizon.com (23.206.57.108)
+Host is up (0.12s latency).
+Other addresses for verizon.com (not scanned): 23.206.62.107 23.206.56.116 23.206.58.110 23.206.59.110 23.206.60.108 23.206.61.108 23.53.5.117 23.206.63.107 23.40.244.108
+
+Host script results:
+| dns-brute: 
+|   DNS Brute-force hostnames: 
+|     info.verizon.com - 206.132.3.45
+|     internet.verizon.com - 23.38.109.146
+|     internet.verizon.com - 23.38.109.159
+|     ns1.verizon.com - 192.76.85.7
+|     ns2.verizon.com - 140.108.22.55
+|     auth.verizon.com - 23.38.109.146
+|     auth.verizon.com - 23.38.109.159
+|     backup.verizon.com - 23.206.63.107
+|     secure.verizon.com - 23.193.200.202
+|     secure.verizon.com - 23.193.200.205
+|     beta.verizon.com - 23.206.57.108
+|     mail.verizon.com - 23.38.109.146
+|     mail.verizon.com - 23.38.109.159
+|     www.verizon.com - 23.193.200.206
+|     www.verizon.com - 23.193.200.208
+|     www2.verizon.com - 192.76.85.14
+|     forum.verizon.com - 99.84.203.32
+|     forum.verizon.com - 99.84.203.45
+|     forum.verizon.com - 99.84.203.65
+|     forum.verizon.com - 99.84.203.93
+|     chat.verizon.com - 140.108.21.44
+|     forum.verizon.com - 2600:9000:20c5:2800:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:3000:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:6c00:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:7e00:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:c400:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:e000:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:f000:8:2ba7:19c0:93a1
+|     forum.verizon.com - 2600:9000:20c5:f200:8:2ba7:19c0:93a1
+|     help.verizon.com - 23.206.63.107
+|     home.verizon.com - 34.224.114.61
+|     home.verizon.com - 52.5.40.131
+|_    home.verizon.com - 54.221.86.65
+
+# Nmap done at Tue Sep 30 16:46:07 2025 -- 1 IP address (1 host up) scanned in 8.97 seconds
